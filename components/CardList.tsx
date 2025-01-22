@@ -1,10 +1,10 @@
-// components/CardList.tsx
 import Image from "next/image";
 
 interface CardItem {
   link: string;
   photo: string;
   title?: string;
+  shadowColor: string;
 }
 
 interface CardListProps {
@@ -13,33 +13,23 @@ interface CardListProps {
 
 export default function CardList({ items }: CardListProps) {
   return (
-    <div style={{ display: "flex", flexWrap: "wrap", gap: "16px" }}>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 max-w-5xl mx-auto">
       {items.map((item, index) => (
         <a
           key={index}
           href={item.link}
           target="_blank"
           rel="noopener noreferrer"
-          style={{
-            textDecoration: "none",
-            color: "inherit",
-            border: "1px solid #ccc",
-            borderRadius: "8px",
-            overflow: "hidden",
-            width: "200px",
-            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-          }}
+          className="card-container group"
+          style={{ "--shadow-color": item.shadowColor } as React.CSSProperties}
         >
-          <div style={{ height: "150px", position: "relative" }}>
+          <div className="relative aspect-square rounded-full overflow-hidden transition-transform duration-300 group-hover:scale-110 group-hover:shadow-2xl">
             <Image
               src={item.photo}
-              alt={item.title || "Card Image"}
-              layout="fill"
-              objectFit="cover"
+              alt={item.title || "Streaming Platform"}
+              fill
+              className="object-cover p-4 bg-white rounded-full"
             />
-          </div>
-          <div style={{ padding: "8px", textAlign: "center" }}>
-            <p>{item.title || item.link}</p>
           </div>
         </a>
       ))}

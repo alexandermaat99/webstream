@@ -1,21 +1,31 @@
+/* globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.card-container {
+  @apply relative transition-all duration-300 ease-in-out;
+}
+
+.card-container::after {
+  content: "";
+  @apply absolute inset-0 rounded-full opacity-0 transition-opacity duration-300;
+  box-shadow: 0 0 15px 5px var(--shadow-color, rgba(0, 255, 0, 0.5));
+}
+
+.card-container:hover::after {
+  @apply opacity-100;
 }
