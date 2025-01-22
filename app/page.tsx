@@ -5,12 +5,12 @@ export default function Home() {
   const items = [
     {
       link: "https://example.com",
-      photo: "https://via.placeholder.com/150",
+      photo: "/images/example.jpg",
       title: "Example Site",
     },
     {
       link: "https://anotherexample.com",
-      photo: "https://via.placeholder.com/150",
+      photo: "/images/another-example.jpg",
       title: "Another Example",
     },
   ];

@@ -1,4 +1,6 @@
 // components/CardList.tsx
+import Image from "next/image";
+
 interface CardItem {
   link: string;
   photo: string;
@@ -28,11 +30,12 @@ export default function CardList({ items }: CardListProps) {
             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
           }}
         >
-          <div style={{ height: "150px", overflow: "hidden" }}>
-            <img
+          <div style={{ height: "150px", position: "relative" }}>
+            <Image
               src={item.photo}
               alt={item.title || "Card Image"}
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              layout="fill"
+              objectFit="cover"
             />
           </div>
           <div style={{ padding: "8px", textAlign: "center" }}>
