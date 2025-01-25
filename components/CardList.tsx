@@ -13,7 +13,7 @@ interface CardListProps {
 
 export default function CardList({ items }: CardListProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 max-w-5xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 max-w-8xl mx-auto">
       {items.map((item, index) => (
         <a
           key={index}

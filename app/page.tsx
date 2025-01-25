@@ -38,6 +38,18 @@ export default function Home() {
       title: "Youtube",
       shadowColor: "rgba(255, 0, 0, 0.5)", // YouTube red
     },
+    {
+      link: "https://www.peacocktv.com/watch/profiles",
+      photo: "/images/peacock.png",
+      title: "Peacock",
+      shadowColor: "rgba(255, 204, 102, 0.5)", // YouTube red
+    },
+    {
+      link: "https://open.spotify.com/",
+      photo: "/images/spotify.png",
+      title: "Spotify",
+      shadowColor: "rgba(30, 215, 96, 0.5)", // YouTube red
+    },
   ];
 
   return (
